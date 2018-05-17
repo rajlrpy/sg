@@ -1,0 +1,26 @@
+<head>
+	<link rel = "stylesheet" href = "style.css" />
+	<link rel = "stylesheet" href = "fa/css/fa.css">
+</head>
+<h1>HTML5 Audio Player Demo</h1>
+
+<input type="file" accept="audio/*"/>
+<div id="message">
+	
+</div>
+<audio id="music" autoplay="autoplay">
+  Your browser does not support the audio format.
+</audio> 
+<div id="audio_player" style="">
+			<progress id='progress-bar' min='0' max='100' value='0'>0% played</progress>
+			<button id='btnReplay' class='replay' title='replay' accesskey="R" onclick='replayAudio();'>Replay</button>	
+			<button id='btnPlayPause' class='play' title='play' accesskey="P" onclick='playPauseAudio();'>Play</button>
+			<button id='btnStop' class='stop' title='stop' accesskey="X" onclick='stopAudio();'>Stop<span class = "fa fa-play"></span></button>
+      		<input type="range" id="volume-bar" title="volume" min="0" max="10" step="1" value="10">
+			<button id='btnMute' class='mute' title='mute' onclick='muteVolume();'>Mute</button>	
+</div>
+
+<br />
+<br />
+<hr />
+<script src = "script.js"></script>
