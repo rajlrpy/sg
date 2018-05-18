@@ -90,10 +90,10 @@ p{
 }
 #showcase{
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 2s; /* Firefox < 16 */
-        -ms-animation: fadein 2s; /* Internet Explorer */
-         -o-animation: fadein 2s; /* Opera < 12.1 */
-            animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+    -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+    animation: fadein 2s;
 }
 
 @keyframes fadein {
@@ -134,8 +134,47 @@ p{
   -o-animation: fadein 1.2s; /* Opera < 12.1 */
   animation: fadein 1.2s;
 }
+@keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+/* Firefox < 16 */
+@-moz-keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+
+/* Internet Explorer */
+@-ms-keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+/* Opera < 12.1 */
+@-o-keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+
+.animateRight{
+  -webkit-animation: animateright .7s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: animateright .7s; /* Firefox < 16 */
+  -ms-animation: animateright .7s; /* Internet Explorer */
+  -o-animation: animateright .7s; /* Opera < 12.1 */
+  animation: animateright .7s !important;
+}
+
+@keyframes animateleft{from{right:0px;opacity:1} to{right:-300px;opacity:0;}}
+/* Firefox < 16 */
+@-moz-keyframes animateleft{from{right:0px;opacity:1} to{right:-300px;opacity:0;}}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes animateleft{from{right:0px;opacity:1} to{right:-300px;opacity:0;}}
+
+/* Internet Explorer */
+@-ms-keyframes animateleft{from{right:0px;opacity:1} to{right:-300px;opacity:0;}}}
+/* Opera < 12.1 */
+@-o-keyframes animateleft{from{right:0px;opacity:1} to{right:-300px;opacity:0;}}
+
+.animateLeft{
+  -webkit-animation: animateleft .7s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: animateleft .7s; /* Firefox < 16 */
+  -ms-animation: animateleft .7s; /* Internet Explorer */
+  -o-animation: animateleft .7s; /* Opera < 12.1 */
+  animation: animateleft .7s !important;
+}
 footer #player{
-  background:#ff6347 !important;
+  background:MediumSeaGreen !important;
   position:fixed !important;
   padding:7px 1px !important;
   bottom:0 !important;
@@ -204,7 +243,7 @@ footer #player #player-wrapper #playlist{
 }
 footer #player #player-wrapper #playlist:hover{
   background-color:#fff !important;
-  color:Tomato !important;
+  color:MediumSeaGreen !important;
   cursor:pointer;
 }
 footer #player #player-wrapper #duration{
@@ -245,16 +284,17 @@ footer #player #player-wrapper #duration{
   }
 }
 #playlist_list{
-  bottom:0% !important;
-  right:0% !important;
+  transition: 1s all ease !important;
+  bottom:73px !important;
+  right:0 !important;
   position:fixed !important;
-  background:Tomato !important;
+  background:MediumSeaGreen !important;
   padding:15px 14px !important;
   z-index: 9999999 !important;
-
+  border-bottom:2px solid #E1E1E1;
 }
 #playlist_list #playlist_list-wrapper{
-  
+
 }
 #playlist_list #playlist_list-wrapper ul{
   list-style-type: none !important;
@@ -265,4 +305,9 @@ footer #player #player-wrapper #duration{
 #playlist_list #playlist_list-wrapper ul li a{
   text-decoration: none !important;
   color:#fff !important;
+  font-size:15px !important;
 }
+
+.w3-sidebar{height:100%;width:200px;background-color:#fff;position:fixed!important;z-index:1;overflow:auto}
+@media (min-width:993px){.w3-sidebar{display:block!important}}
+.w3-bar-block .w3-bar-item{width:100%;display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}

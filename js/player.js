@@ -4,6 +4,7 @@ var player = document.getElementById("music");
 var progressBar = document.getElementById("progress-bar");
 var duration = document.getElementById("duration");
 var btnPlayPause = document.getElementById("btnPlayPause");
+var btnStop = document.getElementById("btnStop");
 
 var single_player = {
   launch:function(){
@@ -12,7 +13,9 @@ var single_player = {
     single_player.loadMusic();
   },
   loadMusic:function(url){
-    player.src = "../2.m4a";
+    var file = "2.m4a";
+    // file = URL.createObjectURL(file)
+    player.src = file;
     single_player.playNpause();
   },
   playNpause:function(){
@@ -39,8 +42,12 @@ var single_player = {
       single_player.updateDuration();
   },
   stopAudio:function(){
-    // player.pause();
-    player.currentTime = 0;
+    if(player.src){
+      //button will change here;
+      single_player.changeButton(btnPlayPause,"play","fa fa-play");
+      player.pause();
+      player.currentTime = 0;
+    }
   },
   updateDuration:function(){
     let currentTime = parseInt(player.currentTime);
@@ -68,12 +75,11 @@ var single_player = {
       var percent = e.offsetX / this.offsetWidth;
       var ctime = percent * player.duration;
       player.currentTime = ctime;
-      console.log(ctime);
       e.target.value = Math.floor(percent / 100);
       e.target.innerHTML = progressBar.value + '% played';
     }
   },
-  changeButton: function(btn,value,icon){
+  changeButton:function(btn,value,icon){
     btn.title = value;
     btn.className = "" + icon;
   }
@@ -81,4 +87,30 @@ var single_player = {
 launch_player.addEventListener("click",single_player.launch,false);
 player.addEventListener("timeupdate",single_player.updateProgress,false);
 btnPlayPause.addEventListener("click",single_player.playNpause,false);
-progressBar.addEventListener("click", single_player.seek,true);
+progressBar.addEventListener("click", single_player.seek,false);
+btnStop.addEventListener("click",single_player.stopAudio,false);
+player.addEventListener("ended",function(){single_player.changeButton(btnPlayPause,"Play","fa fa-play");},false);
+// ------------------------------------------------playList starts --------------------------------------------
+var playlist = document.getElementById("playlist");
+var playlist_list = document.getElementById("playlist_list");
+
+var playListLauncher = {
+  showPlaylist:function(){
+    if(hasClass(playlist_list,"disp-none")){
+      playlist_list.classList.remove("disp-none");
+      playlist_list.classList.remove("animateLeft");
+      playlist_list.classList.add("animateRight");
+    }
+    else{
+      playlist_list.classList.remove("animateRight");
+      playlist_list.classList.add("animateLeft");
+      setTimeout(function(){playlist_list.classList.add("disp-none")},700);
+    }
+  }
+}
+
+playlist.addEventListener("click",playListLauncher.showPlaylist,false);
+
+function hasClass(element,cls){
+  return (' '+element.className + ' ').indexOf(' ' + cls + ' ') > - 1;
+}
