@@ -78,19 +78,12 @@
         <section id = "playlist_list" class = "disp-none">
           <div id = "playlist_list-wrapper">
             <ul>
-              <li><a href = "#"> Despacito ft. Luis </a></li>
-              <li><a href = "#"> Despacito ft. Luis </a></li>
-              <li><a href = "#"> Despacito ft. Luis </a></li>
-              <li><a href = "#"> Despacito ft. Luis </a></li>
-              <li><a href = "#"> Despacito ft. Luis </a></li>
-              <li><a href = "#"> Despacito ft. Luis </a></li>
-              <li><a href = "#"> Despacito ft. Luis </a></li>
-              <li><a href = "#"> Despacito ft. Luis </a></li>
-              <li><a href = "#"> Despacito ft. Luis </a></li>
-              <li><a href = "#"> Despacito ft. Luis </a></li>
-              <li><a href = "#"> Despacito ft. Luis </a></li>
-              <li><a href = "#"> Despacito ft. Luis </a></li>
-            </ul>
+              <li  id = "">Top 7 Songs <span class = "fa fa-search"></span></li>
+              <li > Mila Na Mujhe <br /><span class = "fa fa-star checked"></span><span class = "fa fa-star checked"></span><span class = "fa fa-star checked"></span><span class = "fa fa-star-half-full checked"></span> </li>
+              <li > Sab khatam Ho gya <br /><span class = "fa fa-star checked"></span><span class = "fa fa-star checked"></span><span class = "fa fa-star checked"></span><span class = "fa fa-star-half-full checked"></span> </li>
+              <li > Mila Na Mujhe <br /><span class = "fa fa-star checked"></span><span class = "fa fa-star checked"></span><span class = "fa fa-star checked"></span><span class = "fa fa-star-half-full checked"></span> </li>
+              <li > Mila Na Mujhe <br /><span class = "fa fa-star checked"></span><span class = "fa fa-star checked"></span><span class = "fa fa-star checked"></span><span class = "fa fa-star-half-full checked"></span> </li>
+
           </div>
         </section>
     </body>

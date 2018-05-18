@@ -104,7 +104,7 @@ var playListLauncher = {
     else{
       playlist_list.classList.remove("animateRight");
       playlist_list.classList.add("animateLeft");
-      setTimeout(function(){playlist_list.classList.add("disp-none")},700);
+      setTimeout(function(){playlist_list.classList.add("disp-none")},150);
     }
   }
 }
